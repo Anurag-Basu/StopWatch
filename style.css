@@ -1,0 +1,189 @@
+
+/* clearing some margin and padding or setting background and font-family */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+    color: #fff;
+}
+#heading{
+    padding-top: .5em;
+    background: #19172e;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    letter-spacing: 10px;
+    border-bottom: 5px solid white;
+}
+section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #19172e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* animation for after and before effect of section  */
+@keyframes animate {
+    0%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    
+}
+ /* container inside box  */
+.box .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* stopwatch container  */
+.box .container .stopwatch{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -4rem;
+}
+
+/* watch(minutes,seconds, tens) */
+.box .container .stopwatch .watch{
+    font-size: 3em;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #fff;
+}
+
+/* Start ,Stop and Reset Buttons */
+.box .container .stopwatch .actions button{
+    background: transparent;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 100px;
+    
+}
+
+/* Hover and focus of buttons */
+#start:hover,
+#start:focus{
+    background-color: dodgerblue;
+}
+#stop:hover,
+#stop:focus{
+    background-color: green;
+}
+#reset:hover,
+#reset:focus{
+    background-color: crimson;
+}
+
+
+/* used for making responsive */
+@media only screen and (min-width: 600px) {
+   
+section{
+    position: relative;
+    width: 100vw;
+    height: 91vh;
+    background: #19172e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    min-width: 30%;
+    height: 27%;
+    border-radius: 104px;
+    background: linear-gradient(#f9d924, #ff2c24);
+    animation: animate 5s ease-in-out infinite alternate;
+}
+
+section::after{
+    content: '';
+    position: absolute;
+    bottom: 18%;
+    left: 20%;
+    min-width: 22%;
+    height: 20%;
+    border-radius: 100px;
+    background: linear-gradient(#01d6ff, #0f24f9);
+    animation: animate 5s ease-in-out infinite alternate;
+    animation-delay: -2.5s;
+}
+
+
+.box{
+    position: relative;
+    min-width: 50%;
+    height: 50%;
+    background: rgba(255,355,355,0.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 200px;
+    border: 1px solid rgba(255,355,355,0.1);
+    backdrop-filter: blur(20px);
+}
+
+.box .container .stopwatch{
+    margin-top: 0;
+}
+
+  }
+
+  @media only screen and (min-width: 768px) {
+    
+section::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    min-width: 220px;
+    height: 30%;
+    border-radius: 95px;
+    background: linear-gradient(#f9d924, #ff2c24);
+    animation: animate 5s ease-in-out infinite alternate;
+}
+
+section::after{
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    height: 25%;
+    min-width: 190px;
+    border-radius: 85px;
+    background: linear-gradient(#01d6ff, #0f24f9);
+    animation: animate 5s ease-in-out infinite alternate;
+    animation-delay: -2.5s;
+}
+
+/* Set font size and some margins to watch  */
+
+.box .container .stopwatch .watch{
+    font-size: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.box .container .stopwatch .actions button{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+}
+
