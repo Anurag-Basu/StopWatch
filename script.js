@@ -48,7 +48,7 @@ function startWatch(){
 // adding event listener to start button
 startBtn.addEventListener('click', () => {
     clearInterval(interval);
-    interval = setInterval(startWatch);
+    interval = setInterval(startWatch,10);
 })
 
 // adding event listener to stop button
